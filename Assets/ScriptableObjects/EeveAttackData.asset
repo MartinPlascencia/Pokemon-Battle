@@ -18,10 +18,10 @@ MonoBehaviour:
     maxDamage: 70
     attackDuration: 3
     animationName: Attack
-    soundName: 
+    soundName: eeve_attack1
   - attackName: Fire Strike
     minDamage: 80
     maxDamage: 120
     attackDuration: 3
     animationName: Attack2
-    soundName: 
+    soundName: eeve_attack2
