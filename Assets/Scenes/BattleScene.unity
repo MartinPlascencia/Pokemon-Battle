@@ -482,6 +482,8 @@ MonoBehaviour:
           m_StringArgument: Idle
           m_BoolArgument: 0
         m_CallState: 2
+  _winAnimationName: Attack
+  _winSoundName: eeve_attack
 --- !u!1 &370096857
 GameObject:
   m_ObjectHideFlags: 0
@@ -829,8 +831,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 2.7000122, y: 1.3500061}
-  m_SizeDelta: {x: -121.4, y: -117.700005}
+  m_AnchoredPosition: {x: -1, y: 3.9999847}
+  m_SizeDelta: {x: -114, y: -107.800026}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &504575788
 MonoBehaviour:
@@ -856,16 +858,16 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: 513815bdbc28637438e9092f6d1c3ef7, type: 3}
     m_FontSize: 60
     m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 5
-    m_MaxSize: 80
+    m_BestFit: 1
+    m_MinSize: 20
+    m_MaxSize: 70
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Charizard apppear
+  m_Text: asdfa s asdfa sdfa sdf asdf asdf asdfasd fasdf asdf sdf
 --- !u!222 &504575789
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1130,6 +1132,8 @@ MonoBehaviour:
           m_StringArgument: Idle
           m_BoolArgument: 0
         m_CallState: 2
+  _winAnimationName: Victory
+  _winSoundName: charizard_attack2
 --- !u!1 &541482984
 GameObject:
   m_ObjectHideFlags: 0
@@ -1667,7 +1671,31 @@ MonoBehaviour:
         m_CallState: 2
   _onBattleEnded:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1959732579}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: StopMusic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1959732579}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: finish_sound
+          m_BoolArgument: 0
+        m_CallState: 2
   _onBattleStopped:
     m_PersistentCalls:
       m_Calls:
@@ -1694,6 +1722,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1069736484}
+        m_TargetAssemblyTypeName: FrameText, Assembly-CSharp
+        m_MethodName: StopText
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!1 &826903932
 GameObject:
@@ -2202,6 +2242,7 @@ GameObject:
   - component: {fileID: 1069736483}
   - component: {fileID: 1069736482}
   - component: {fileID: 1069736484}
+  - component: {fileID: 1069736485}
   m_Layer: 5
   m_Name: MessageFrame
   m_TagString: Untagged
@@ -2219,7 +2260,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 504575787}
   m_Father: {fileID: 832814948}
@@ -2227,7 +2268,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -321}
-  m_SizeDelta: {x: 1131.51, y: 275}
+  m_SizeDelta: {x: 1226.52, y: 275}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1069736482
 MonoBehaviour:
@@ -2282,9 +2323,31 @@ MonoBehaviour:
   _text: {fileID: 504575788}
   _timeBetweenLetters: 0.05
   _timeToDisappear: 1
-  _animator: {fileID: 0}
+  _animator: {fileID: 1069736485}
   _showTextAnimationName: ShowText
   _hideTextAnimationName: HideText
+--- !u!95 &1069736485
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1069736480}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7ee3db4cc5f9b7d40b839e129000390f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1114842404
 GameObject:
   m_ObjectHideFlags: 0
